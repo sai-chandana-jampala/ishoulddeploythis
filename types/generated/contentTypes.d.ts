@@ -651,7 +651,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   };
   attributes: {
     name: Schema.Attribute.String;
-    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Private;
+    image: Schema.Attribute.Media<'images'>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
