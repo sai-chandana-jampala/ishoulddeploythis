@@ -4,23 +4,31 @@
   "info": {
     "singularName": "product",
     "pluralName": "products",
-    "displayName": "product"
+    "displayName": "product",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
-      "type": "string"
+    "Title": {
+      "type": "string",
+      "required": true
     },
-    "image": {
-      "allowedTypes": [
-        "images"
-      ],
+    "Image": {
       "type": "media",
-      "multiple": false,
-      "private": false
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "Description": {
+      "type": "text",
+      "maxLength": 500,
+      "required": true
     }
   }
 }

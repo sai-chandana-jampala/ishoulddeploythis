@@ -645,13 +645,20 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     singularName: 'product';
     pluralName: 'products';
     displayName: 'product';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    name: Schema.Attribute.String;
-    image: Schema.Attribute.Media<'images'>;
+    Title: Schema.Attribute.String & Schema.Attribute.Required;
+    Image: Schema.Attribute.Media<'images' | 'videos', true> &
+      Schema.Attribute.Required;
+    Description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 500;
+      }>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
