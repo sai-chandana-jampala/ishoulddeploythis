@@ -652,7 +652,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   };
   attributes: {
     Title: Schema.Attribute.String & Schema.Attribute.Required;
-    Image: Schema.Attribute.Media<'images' | 'videos', true> &
+    Media: Schema.Attribute.Media<'images' | 'videos', true> &
       Schema.Attribute.Required;
     Description: Schema.Attribute.Text &
       Schema.Attribute.Required &
